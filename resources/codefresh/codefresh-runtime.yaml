@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: codefresh-runtime
   labels:
-    codefresh.io/entity: 'git-source'
+    codefresh.io/entity: git-source
     codefresh.io/internal: 'false'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
