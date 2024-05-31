@@ -1,0 +1,29 @@
+gitops-runtime:
+  argo-cd:
+    openshift:
+      enabled: true
+    redis:
+      securityContext:
+        runAsUser: 1001190001
+  argo-events:
+    openshift: true
+    webhook:
+      port: 8443
+  global:
+    codefresh:
+      accountId: 662fe5c296906ecc9806e3f7
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      name: codefresh
+  internal-router:
+    clusterDomain: cluster.local
+    dnsNamespace: openshift-dns
+    dnsService: dns-default
+  sealed-secrets:
+    containerSecurityContext:
+      enabled: false
+    podSecurityContext:
+      enabled: false
